@@ -10,38 +10,53 @@ var lowerCaseletters = "";
 
 //Received code from Gary in-class
 function generatePassword() {
-  numberOfCharacters = prompt("How many characters do you want? (minimum: 8 characters maximum: 128)")
+  numberOfCharacters = prompt("How many characters do you want? (minimum:8  maximum:128)")
   includeNumbers = confirm("Do you want numbers?")
   includeSpecialCharacters = confirm("Do you want special characters?")
   upperCaseletters = confirm("Do you want uppercase letters?")
   lowerCaseletters = confirm("Do you want lowercase letters?")
 
-  var RandomNumber = getARandomNumber()
-  var RandomCharacter = getARandomCharacter()
-  return finalPassword = RandomNumber + RandomCharacter;
-}
-
-function getARandomNumber(includeNumbers) {
-  return Math.floor(Math.random(includeNumbers) * (128 - 8) + 8);
-}
-
-var letter = {
-  alphabet: ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"],
-  randomletter: function getARandomletter() {
-    console.log("");
+  function generateCharacterLength() {
+    console.log(numberOfCharacters * 1);
   }
 
-function getASpecialCharacter() {
-    var specialCharacter = "!@#$%^&*"
-  var specialCharacterLength = specialCharacter.length;
-return Math.floor(Math.random(specialCharacterLength) * (8 - 1) + 1);
-}
+  if (includeNumbers === true) {
+    function getARandomNumber() {
+      Math.floor(Math.random);
+    }
+  }
 
+  if (includeSpecialCharacters === true) {
+    function getARandomCharacter() {
+      console.log("!@#$%^&*");
+    }
+  }
+
+  if (upperCaseletters === true) {
+    function getUpperCase() {
+
+    }
+  }
+
+  if (lowerCaseletters === true) {
+    function getLowercase() {
+
+    }
+  }
+
+  generateCharacterLength()
+  var RandomCharacter = getARandomCharacter()
+  var RandomNumber = getARandomNumber()
+  var RandomUppercase = getUpperCase()
+  var RandomLowercase = getLowerCase()
+
+  for (var x = 8; x < 128, x;) {
+    return finalPassword = RandomCharacter + RandomNumber + RandomUppercase + RandomLowercase;
+  }
+}
 
 generatePassword()
 
-
-//DO NOT CHANGE BELOW CODE
 // Write password to the #password input
 function writePassword() {
   var password = generatePassword();
