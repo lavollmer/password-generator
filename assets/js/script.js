@@ -4,21 +4,29 @@ var generateBtn = document.querySelector("#generate");
 //Write below this for CODE
 
 //I need to declare variables within a global scope to +- user input
-var numberOfCharacters = "";
-var includeNumbers = "";
-var includeSpecialCharacters = "";
-var upperCaseletters = "";
-var lowerCaseletters = "";
-var x = "";
+
+function userChoiceCharacters() {
+  numberOfCharacters = prompt("How many characters do you want? (minimum:8  maximum:128)")
+  console.log(numberOfCharacters);
+
+  includeNumbers = confirm("Do you want numbers?")
+  console.log(includeNumbers);
+
+  includeSpecialCharacters = confirm("Do you want special characters?")
+  console.log(includeSpecialCharacters);
+
+  upperCaseLetters = confirm("Do you want uppercase letters?")
+  console.log(upperCaseLetters);
+
+  lowerCaseLetters = confirm("Do you want lowercase letters?")
+  console.log(lowerCaseLetters);
+}
+
+userChoiceCharacters()
+
 
 //Received code from Gary in-class (lines 12 -17)
 function generatePassword() {
-  numberOfCharacters = prompt("How many characters do you want? (minimum:8  maximum:128)")
-  includeNumbers = confirm("Do you want numbers?")
-  includeSpecialCharacters = confirm("Do you want special characters?")
-  upperCaseletters = confirm("Do you want uppercase letters?")
-  lowerCaseletters = confirm("Do you want lowercase letters?")
-
   // I need to determine the length of the password based on user input
   function generateCharacterLength() {
     var x = numberOfCharacters * 1;
@@ -28,7 +36,7 @@ function generatePassword() {
   //If user says yes (true), I need to create a random number
   if (includeNumbers === true) {
     function getARandomNumber() {
-      Math.floor(Math.random);
+      var x = (Math.floor(Math.random() * (100 - 0 + 1) + 0))
     }
   }
 
@@ -40,7 +48,7 @@ function generatePassword() {
   }
 
   //If user says yes (true), I need to include a random upper case letter
-  if (upperCaseletters === true) {
+  if (upperCaseLetters === true) {
     function getUpperCase() {
       var alphabet = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
       return alphabet.random()
@@ -48,7 +56,7 @@ function generatePassword() {
   }
 
   // If user says yes(true), I need to include a random lower case number
-  if (lowerCaseletters === true) {
+  if (lowerCaseLetters === true) {
     function getLowercase() {
 
     }
