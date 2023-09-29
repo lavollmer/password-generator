@@ -12,16 +12,16 @@ function getARandomNumber(includeNumbers) {
   return Math.floor(Math.random(includeNumbers) * (128 - 8) + 8);
 }
 
-function getARandomCharacter() {
-  var charac = "abcdefghijklmnopqrstuvwxyz"
-  var characlength = charac.length;
-  return Math.floor(Math.random(characlength) * (26 - 1) + 1);
-}
+var letter = {
+  alphabet: ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"],
+  randomletter: function getARandomletter() {
+    console.log("");
+  }
 
 function getASpecialCharacter() {
-  var specialCharacter = "!@#$%^&*"
+    var specialCharacter = "!@#$%^&*"
   var specialCharacterLength = specialCharacter.length;
-  return Math.floor(Math.random(specialCharacterLength) * (8 - 1) + 1);
+return Math.floor(Math.random(specialCharacterLength) * (8 - 1) + 1);
 }
 
 //Received code from Gary in-class
