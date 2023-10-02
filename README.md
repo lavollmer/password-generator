@@ -11,7 +11,7 @@ Website: https://lavollmer.github.io/password-generator/
 
 Screenshot of website page is below.
 
-![password generator website page]()
+![password generator website page](./assets/images/passwordgeneratorimage.png)
 
 ## Credits
 
