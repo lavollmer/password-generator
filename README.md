@@ -17,6 +17,19 @@ Screenshot of website page is below.
 
 Collaborators include U of MN coding bootcamp tutor and U of MN coding bootcamp Fall 2023 classes.
 
+Robby Kurle, tutor, helped with this section:
+  for (var i = 0; i < numberOfCharacters; i++) {
+    // select single random index from characterpool based on the characterpool's current length
+    var getIndex = Math.floor(Math.random() * characterPool.length)
+    //convert random index to true character value
+    var characterValue = characterPool[getIndex];
+    finalPassword.push(characterValue);
+    console.log(finalPassword);
+  }
+  return finalPassword.join("");
+
+He also helped with the concat method technical piece and building the characterPool section (the logic of creating one big pool).
+
 ## License
  
  MIT License 
