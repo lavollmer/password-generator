@@ -9,37 +9,117 @@ function writePassword() {
   var passwordText = document.querySelector("#password");
 
   passwordText.value = password;
-
 }
 //Write below this for CODE
-var numbersArray = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20"];
+var numbersArray = [
+  "1",
+  "2",
+  "3",
+  "4",
+  "5",
+  "6",
+  "7",
+  "8",
+  "9",
+  "10",
+  "11",
+  "12",
+  "13",
+  "14",
+  "15",
+  "16",
+  "17",
+  "18",
+  "19",
+  "20",
+];
 var characterPool = [];
-var alphabet = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
-var lowerCaseAlphabet = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "x"];
-var specialCharacter = ["!", "@", "#", "$", "%", "^", "&", "*", "<", "."]
+var alphabet = [
+  "A",
+  "B",
+  "C",
+  "D",
+  "E",
+  "F",
+  "G",
+  "H",
+  "I",
+  "J",
+  "K",
+  "L",
+  "M",
+  "N",
+  "O",
+  "P",
+  "Q",
+  "R",
+  "S",
+  "T",
+  "U",
+  "V",
+  "W",
+  "X",
+  "Y",
+  "Z",
+];
+var lowerCaseAlphabet = [
+  "a",
+  "b",
+  "c",
+  "d",
+  "e",
+  "f",
+  "g",
+  "h",
+  "i",
+  "j",
+  "k",
+  "l",
+  "m",
+  "n",
+  "o",
+  "p",
+  "q",
+  "r",
+  "s",
+  "t",
+  "u",
+  "v",
+  "w",
+  "x",
+  "y",
+  "x",
+];
+var specialCharacter = ["!", "@", "#", "$", "%", "^", "&", "*", "<", "."];
 
 function generatePassword() {
-  var numberOfCharacters = prompt("How many characters do you want? (minimum:8  maximum:128)")
+  var numberOfCharacters = prompt(
+    "How many characters do you want? (minimum:8  maximum:128)"
+  );
   console.log(numberOfCharacters);
 
-  if(!(numberOfCharacters >= 8 || numberOfCharacters <= 128)) {
-    alert("Number needs to be a minimum of 8 characters and maximum of 128 characters")
-    var numberOfCharacters = prompt("How many characters do you want? (minimum:8  maximum:128)")
-  console.log(numberOfCharacters);
-  } 
+  //if the numberofCharacters is NOT greater than 8 AND less than 128 - send an alert
+  if (!(numberOfCharacters >= 8 && numberOfCharacters <= 128)) {
+    alert(
+      "Number needs to be a minimum of 8 characters and maximum of 128 characters"
+    );
+    var numberOfCharacters = prompt(
+      "How many characters do you want? (minimum:8  maximum:128)"
+    );
+    console.log(numberOfCharacters);
+  }
 
-  var includeNumbers = confirm("Do you want numbers?")
+  var includeNumbers = confirm("Do you want numbers?");
   console.log(includeNumbers);
 
-  var includeSpecialCharacters = confirm("Do you want special characters?")
+  var includeSpecialCharacters = confirm("Do you want special characters?");
   console.log(includeSpecialCharacters);
 
-  var upperCaseLetters = confirm("Do you want uppercase letters?")
+  var upperCaseLetters = confirm("Do you want uppercase letters?");
   console.log(upperCaseLetters);
 
-  var lowerCaseLetters = confirm("Do you want lowercase letters?")
+  var lowerCaseLetters = confirm("Do you want lowercase letters?");
   console.log(lowerCaseLetters);
-
 
   //If user says yes (true), I need to create a random number
   if (includeNumbers === true) {
@@ -64,10 +144,10 @@ function generatePassword() {
 
   var finalPassword = [];
 
-  //generate final password with character length specified 
+  //generate final password with character length specified
   for (var i = 0; i < numberOfCharacters; i++) {
     // select single random index from characterpool based on the characterpool's current length
-    var getIndex = Math.floor(Math.random() * characterPool.length)
+    var getIndex = Math.floor(Math.random() * characterPool.length);
     //convert random index to true character value
     var characterValue = characterPool[getIndex];
     finalPassword.push(characterValue);
@@ -75,5 +155,3 @@ function generatePassword() {
   }
   return finalPassword.join("");
 }
-
-
