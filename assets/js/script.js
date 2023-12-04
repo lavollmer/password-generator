@@ -19,8 +19,8 @@ var lowerCaseAlphabet = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", 
 var specialCharacter = ["!", "@", "#", "$", "%", "^", "&", "*", "<", "."]
 
 function generatePassword() {
-  // var numberOfCharacters = prompt("How many characters do you want? (minimum:8  maximum:128)")
-  // console.log(numberOfCharacters);
+  var numberOfCharacters = prompt("How many characters do you want? (minimum:8  maximum:128)")
+  console.log(numberOfCharacters);
 
   if(!(numberOfCharacters >= 8 || numberOfCharacters <= 128)) {
     alert("Number needs to be a minimum of 8 characters and maximum of 128 characters")
